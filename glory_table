@@ -1,0 +1,92 @@
+getgenv().gloryv3 = {
+    AimAssistance = {
+        Enabled = true,
+        Hotkey = 'C',
+        HitPart = 'Head', -- Closest Point, Closest Part, Part Name, Part Table
+        ClosestPoint = { Mode = 'Advanced', Scale = 0.93 }, -- Simple, Advanced
+        Stickiness = 1, -- 0 - 1
+        Sensitivity = 2, -- 1 - 10
+        EasingStyle = 'Circular', -- Linear, Sine, Back, Quad, Cubic, Quart, Quint, Expo, Circ, Elastic, Bounce
+        EasingDirection = 'InOut', -- In, Out, InOut
+        FOV = { Enabled = true, Size = 300 },
+        Prediction = { Enabled = true, X = 0.13, Y = 0.13, Z = 0.13 },
+    },
+
+    SilentAim = {
+        Enabled = true,
+        Hotkey = 'O',
+        TargetKey = 'Q', -- so you can have target aim instead of closest to mouse in fov = target
+        Selection = 'Automatic', -- Automatic / Target
+        MaxDistance = math.huge, -- Max distance to scan within
+        HitChance = 100,
+        HitPart = 'Closest Point', -- Closest Point, Closest Part, Part Name, Part Table
+        ClosestPoint = { Mode = 'Advanced', Scale = 0.15 },
+        Prediction = {
+            Enabled = false,
+            Mode = 'Regular',
+            Scale = 5.0,
+            X = 0.15,
+            Y = 0.15,
+            Z = 0.15,
+        },
+        BulletRedirection = {
+            Enabled = false, -- true / false
+            Weapons = { '[Revolver]', '[Silencer]' }, -- Weapon names to apply redirection to
+        },
+        FOV = {
+            Enabled = true,
+            Visible = true,
+            Sync = false,
+            Type = 'Circle', -- Circle 
+            Circle = 150,
+            HitScan = math.huge, -- Radius to scan for players within
+            WeaponConfigs = {
+                Enabled = false,
+                Shotguns = { Circle = 150 },
+                Pistols = { Circle = 150 },
+                Others = { Circle = 15 },
+            },
+        },
+    },
+
+    TriggerBot = {
+        Enabled = false,
+        Hotkey = 'X',
+        MaxDistance = 250,
+        Radius = math.huge,
+        Cooldown = 0,
+        Type = 'Toggle', -- Toggle / Hold
+        Prediction = { Enabled = false, Value = 0.13 },
+        FOV = { Visible = false, X = 3.3, Y = 7, Z = 3.6 },
+    },
+
+    WeaponMod = { -- Da Hood Specific
+        DoubleTap = { 
+            Enabled = false,
+            Hotkey = 'E',
+            Weapons = { '[Revolver]', '[Silencer]' } 
+        },
+        SpreadModifier = {
+            Enabled = true,
+            Value = 0.8,
+            Randomizer = { Enabled = false, Value = math.random(0.1, 0.4) },
+        },
+    },
+
+    playerexploits = {
+        NoJumpCooldown = false,
+        nofall = false,
+        WalkSpeed = { Enabled = true, Speed = 2, Glide = false, Hotkey = 'G' },
+    },
+
+        Checks = {
+        Forcefielded = true,
+        Visiblecheck = true,
+        GrabCheck = true,
+        PlayerDowned = true,
+        PlayerMove = false,
+        LocalDead = false,
+    },
+}
+
+-- more features added soon after college stops killing me :)
